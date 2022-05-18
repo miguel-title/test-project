@@ -1,0 +1,154 @@
+/* dark/light mode */
+.theme-light {
+  --color-btn_back: #cc0000;
+  --color-btn_text: white;
+  --color-left_back: #cecece;
+  --color-left_text: #2f4f4f;
+  --color-right_back: white;
+  --color-right_text: #000000;
+}
+.theme-dark {
+  --color-btn_back: #f0f8ff;
+  --color-btn_text: #800080;
+  --color-left_back: white;
+  --color-left_text: #696969;
+  --color-right_back: #008080;
+  --color-right_text: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-body {
+  background-color: #f3f3f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-body .App-body-left {
+  background-color: var(--color-left_back);
+  margin-left: 0px;
+  width: 50%;
+}
+.message {
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 400px;
+  background-color: var(--color-left_text);
+}
+.btn_send {
+  margin-left: 30px;
+  height: 30px;
+  background-color: var(--color-btn_back);
+}
+.btn_name {
+  color: var(--color-btn_text);
+}
+
+.App-body .App-body-right {
+  background-color: var(--color-right_back);
+  margin-left: 0px;
+  width: 50%;
+}
+.App-body-right .right_text {
+  margin-left: 20px;
+  color: var(--color-right_text);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  margin-left: 500px;
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url("image/night.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url("image/sunny.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
